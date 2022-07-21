@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="user/userbase::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<section>
+
+		<div class="card mr-3 ml-3">
+
+			<div class="card-body">
+				<div class="container text-center">
+					<img src="" style="height: 150px; width: 150px;" class="profile_pic"
+						th:src="@{'/img/'+${user.imageUrl}}" alt="profile photo" />
+				</div>
+
+				<h2 class="text-center mt-1" th:text="'Welcome '+${user.name}"> </h2>
+
+				<h4 class="text-center mt-3 "><a href="/user/addContact">Create</a> and <a
+						href="/user/viewContacts/0">manage</a> your contacts here </h4>
+			</div>
+		</div>
+
+
+		<script>
+
+			$(document).ready(() => {
+
+				$(".item").removeClass("active");
+				$("#home-link").addClass("active");
+			});
+
+		</script>
+
+
+	</section>
+</body>
+
+</html>
